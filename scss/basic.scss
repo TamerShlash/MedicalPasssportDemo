@@ -71,7 +71,7 @@
 		}
 		.item + .item {
 			border: none;
-			color: #F45C52;
+			color: #444;
 			background: white;
 			padding: 0;
 
@@ -86,7 +86,7 @@
 					float: right;
 					width: 30px;
 					height: 2px;
-					background: #eee;
+					background: #f6f6f6;
 					margin-top: 10px;
 					position: relative;
 
@@ -94,7 +94,7 @@
 						content: '';
 						height: 2px;
 						width: 10px;
-						background: #91D150;
+						background: #f1c40f;
 						position: absolute;
 						left: 0;
 						top: 0;
@@ -126,6 +126,7 @@
 		margin-top: 0;
 		padding: 16px 0;
 		position: relative;
+		cursor: pointer;
 
 		.col {
 			text-align: center;
@@ -143,6 +144,10 @@
 
 			.unit {
 				color: #aaa;
+			}
+
+			.normal {
+				color: #1abc9c;
 			}
 		}
 	}
@@ -167,5 +172,8 @@
 		top: 2px;
 		color: white;
 		cursor: pointer;
+	}
+	.normal {
+		color: #1abc9c;
 	}
 }
