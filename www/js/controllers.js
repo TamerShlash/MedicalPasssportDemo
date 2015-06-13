@@ -4,7 +4,9 @@ angular.module('starter.controllers', [])
 })
 
 .controller('DashboardCtrl', function($scope) {})
-.controller('BasicCtrl', function($scope) {})
+.controller('BasicCtrl', function($scope, $localstorage) {
+  $scope.user = $localstorage.getObject('activeUser');
+})
 .controller('MedicationCtrl', function($scope) {})
 .controller('ImmunizationCtrl', function($scope) {})
 .controller('ReportsCtrl', function($scope, Camera) {
@@ -23,7 +25,7 @@ angular.module('starter.controllers', [])
 })
 .controller('MedicalHistoryCtrl', function($scope) {})
 
-.controller('AccountsCtrl', function($scope, Accounts) {
+.controller('AccountsCtrl', function($scope, Accounts, $localstorage, $state) {
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.
   // To listen for when this page is active (for example, to refresh data),
@@ -31,15 +33,17 @@ angular.module('starter.controllers', [])
   //
   //$scope.$on('$ionicView.enter', function(e) {
   //});
+
+  $scope.switchTo = function(accountId) {
+    $localstorage.set('activeId', accountId);
+    $localstorage.setObject('activeUser', Accounts.get(accountId));
+    $state.go('tab.dashboard');
+  }
   
   $scope.accounts = Accounts.all();
   $scope.remove = function(account) {
     Accounts.remove(account);
   }
-})
-
-.controller('AccountSwitchCtrl', function($scope, $stateParams, Accounts) {
-  // $scope.chat = Accounts.get($stateParams.chatId);
 })
 
 .controller('AdviceCtrl', function($scope) {
