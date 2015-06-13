@@ -10,7 +10,7 @@ angular.module('starter.controllers', [])
 .controller('ReportsCtrl', function($scope) {})
 .controller('MedicalHistoryCtrl', function($scope) {})
 
-.controller('ChatsCtrl', function($scope, Chats) {
+.controller('AccountsCtrl', function($scope, Accounts) {
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.
   // To listen for when this page is active (for example, to refresh data),
@@ -19,17 +19,17 @@ angular.module('starter.controllers', [])
   //$scope.$on('$ionicView.enter', function(e) {
   //});
   
-  $scope.chats = Chats.all();
-  $scope.remove = function(chat) {
-    Chats.remove(chat);
+  $scope.accounts = Accounts.all();
+  $scope.remove = function(account) {
+    Accounts.remove(account);
   }
 })
 
-.controller('ChatDetailCtrl', function($scope, $stateParams, Chats) {
-  $scope.chat = Chats.get($stateParams.chatId);
+.controller('AccountSwitchCtrl', function($scope, $stateParams, Accounts) {
+  // $scope.chat = Accounts.get($stateParams.chatId);
 })
 
-.controller('AccountCtrl', function($scope) {
+.controller('AdviceCtrl', function($scope) {
   $scope.settings = {
     enableFriends: true
   };

@@ -30,7 +30,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   $stateProvider
 
   // setup an abstract state for the tabs directive
-    .state('tab', {
+  .state('tab', {
     url: "/tab",
     abstract: true,
     templateUrl: "templates/tabs.html"
@@ -61,7 +61,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   .state('tab.medication', {
     url: '/medication',
     views: {
-      'tab-personal': {
+      'tab-dashboard': {
         templateUrl: 'templates/medication.html',
         controller: 'MedicationCtrl'
       }
@@ -71,7 +71,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   .state('tab.immunization', {
     url: '/immunization',
     views: {
-      'tab-personal': {
+      'tab-dashboard': {
         templateUrl: 'templates/immunization.html',
         controller: 'ImmunizationCtrl'
       }
@@ -81,7 +81,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   .state('tab.reports', {
     url: '/reports',
     views: {
-      'tab-personal': {
+      'tab-dashboard': {
         templateUrl: 'templates/reports.html',
         controller: 'ReportsCtrl'
       }
@@ -91,38 +91,29 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
   .state('tab.medical-history', {
     url: '/medical-history',
     views: {
-      'tab-personal': {
+      'tab-dashboard': {
         templateUrl: 'templates/medical-history.html',
         controller: 'MedicalHistoryCtrl'
       }
     }
   })
 
-  .state('tab.chats', {
-      url: '/chats',
-      views: {
-        'tab-chats': {
-          templateUrl: 'templates/tab-chats.html',
-          controller: 'ChatsCtrl'
-        }
-      }
-    })
-    .state('tab.chat-detail', {
-      url: '/chats/:chatId',
-      views: {
-        'tab-chats': {
-          templateUrl: 'templates/chat-detail.html',
-          controller: 'ChatDetailCtrl'
-        }
-      }
-    })
-
-  .state('tab.account', {
-    url: '/account',
+  .state('tab.accounts', {
+    url: '/accounts',
     views: {
-      'tab-account': {
-        templateUrl: 'templates/tab-account.html',
-        controller: 'AccountCtrl'
+      'tab-accounts': {
+        templateUrl: 'templates/tab-accounts.html',
+        controller: 'AccountsCtrl'
+      }
+    }
+  })
+
+  .state('tab.advice', {
+    url: '/advice',
+    views: {
+      'tab-advice': {
+        templateUrl: 'templates/tab-advice.html',
+        controller: 'AdviceCtrl'
       }
     }
   });
