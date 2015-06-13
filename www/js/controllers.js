@@ -7,7 +7,19 @@ angular.module('starter.controllers', [])
 .controller('BasicCtrl', function($scope, $localstorage) {
   $scope.user = $localstorage.getObject('activeUser');
 })
-.controller('MedicationCtrl', function($scope) {})
+.controller('MedicationCtrl', function($scope) {
+  $scope.showAddForm = false;
+  $scope.medicineName = '';
+  $scope.medicine = '';
+  $scope.medicineList = [
+    'Lipitor',
+    'Cozaar',
+    'Meiact'
+  ];
+  $scope.selectMedicine = function (med) {
+    $scope.medicine = med;
+  };
+})
 .controller('ImmunizationCtrl', function($scope) {})
 .controller('ReportsCtrl', function($scope, Camera) {
   $scope.getPhoto = function() {

@@ -8,13 +8,12 @@
             <h2 class="top">ADD NEW</h2>
             <h2>MEDICATION</h2>
             <label>Medicine Name
-            	selected: {{medicineName.selected}}
-                <ui-select ng-model="medicineName.selected" ng-disabled="disabled" theme="bootstrap">
-                    <ui-select-match placeholder="Enter medicine name...">{{ $select.selected.name }}</ui-select-match>
-                    <ui-select-choices repeat="medicine in medicineList | filter: $select.search">
-                        <div ng-bind-html="medicine.name | highlight: $select.search"></div>
-                    </ui-select-choices>
-                </ui-select>
+		<input type="text" ng-model="medicineName">
+		<div class="result" ng-show="medicine">{{ medicine }}</div>
+		<ul ng-show="medicineName" ng-class="{ hide: medicine }">
+			<li ng-repeat="med in medicineList | filter: medicineName" on-touch="selectMedicine(med)">{{ med }}</li>
+		</ul>
+
             </label>
         </form>
     </ion-content>
