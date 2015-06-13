@@ -26,7 +26,20 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 
 .card {
 	border-radius: 3px;
+	box-shadow: none;
 }
 
+.col {
+	padding: 0;
+}
+
+.scroll-content {
+	max-width: 700px;
+	margin: 0 auto;
+}
+
+ion-tabs.tabs-color-active-positive .tab-item.tab-item-active, ion-tabs.tabs-color-active-positive .tab-item.active, ion-tabs.tabs-color-active-positive .tab-item.activated {
+	color: #F45C52;
+}
 
 
