@@ -8230,6 +8230,10 @@ a.button {
   /* Opera 11.10+ */
   background: linear-gradient(45deg, #ddd6f3 10%, #faaca8 90%);
   /* W3C */ }
+  .advice .item {
+    background: rgba(255, 255, 255, 0.7);
+    border: none;
+    margin: 0; }
 
 .card {
   border-radius: 3px;
