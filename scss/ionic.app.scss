@@ -28,6 +28,7 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 @import "reports";
 @import "account";
 @import "medicalhistory";
+@import "advice";
 
 .card {
 	border-radius: 3px;
@@ -72,3 +73,7 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active, ion-tabs.tabs-col
 	color: #F45C52;
 }
 
+.tab-title {
+	display: block;
+	margin-top: -4px;
+}

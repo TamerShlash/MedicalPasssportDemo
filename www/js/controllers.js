@@ -61,7 +61,6 @@ angular.module('starter.controllers', [])
     $scope.currentUser = accountId;
     $localstorage.set('activeId', accountId);
     $localstorage.setObject('activeUser', Accounts.get(accountId));
-    $state.go('tab.dashboard');
   }
   
   $scope.accounts = Accounts.all();
