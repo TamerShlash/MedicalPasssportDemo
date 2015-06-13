@@ -12,9 +12,32 @@ angular.module('starter.controllers', [])
   $scope.medicineName = '';
   $scope.medicine = '';
   $scope.medicineList = [
+    'Acebutolol', 
+    'Acnocin',
+    'Adrenaline', 
+    'Baclofen',
+    'Buscopan', 
+    'Calcitriol',
+    'Calcium Acetate',
+    'Epivir', 
+    'Gabapentin', 
+    'Glipizide', 
+    'Imodium',
+    'Lamivudine',
+    'Lactase Fast Act',
+    'Lasix',
     'Lipitor',
-    'Cozaar',
-    'Meiact'
+    'Madopar',
+    'Meiact',
+    'Metformin',
+    'Nexium',  
+    'Penicillin', 
+    'Rapifen', 
+    'Singulair', 
+    'Tamiflu', 
+    'Warfarin', 
+    'Xyzal', 
+    'Zyloric'
   ];
   $scope.selectMedicine = function (med) {
     $scope.medicine = med;

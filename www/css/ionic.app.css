@@ -7926,7 +7926,7 @@ a.button {
       .medication .add-form h2 + h2 {
         margin-bottom: 20px; }
     .medication .add-form label {
-      color: #444;
+      color: #3694C3;
       position: relative; }
       .medication .add-form label .result {
         position: absolute;
@@ -7934,7 +7934,7 @@ a.button {
         left: 0;
         width: 100%;
         height: 34px;
-        padding: 5px 10px;
+        padding: 5px 10px 5px 0;
         background: none;
         line-height: 1.5;
         font-size: 20px;
@@ -7943,19 +7943,23 @@ a.button {
     .medication .add-form input {
       width: 100%;
       background: none;
-      padding: 5px 10px;
+      padding: 5px 10px 5px 0;
       margin-top: 5px;
       font-size: 20px;
       color: #444;
       border-bottom: 2px solid #3694C3; }
-    .medication .add-form ul.hide {
-      display: none; }
-    .medication .add-form ul li {
-      background: white;
-      padding: 10px;
-      border-top: 1px solid #eee; }
-      .medication .add-form ul li:hover {
-        background: #fafafa; }
+    .medication .add-form ul {
+      height: 200px;
+      overflow: scroll; }
+      .medication .add-form ul.hide {
+        display: none; }
+      .medication .add-form ul li {
+        background: white;
+        padding: 10px;
+        border-top: 1px solid #eee;
+        opacity: 0.8; }
+        .medication .add-form ul li:hover {
+          background: #fafafa; }
   .medication .new {
     text-align: center;
     margin-top: 20px;
