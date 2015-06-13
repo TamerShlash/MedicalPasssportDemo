@@ -7916,3 +7916,6 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active, ion-tabs.tabs-col
   background: white; }
   .bar.bar-stable {
     background: white; }
+
+.bar-stable .button.button-clear {
+  color: #F45C52; }
