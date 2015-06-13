@@ -58,6 +58,46 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     }
   })
 
+  .state('tab.medication', {
+    url: '/medication',
+    views: {
+      'tab-personal': {
+        templateUrl: 'templates/medication.html',
+        controller: 'MedicationCtrl'
+      }
+    }
+  })
+
+  .state('tab.immunization', {
+    url: '/immunization',
+    views: {
+      'tab-personal': {
+        templateUrl: 'templates/immunization.html',
+        controller: 'ImmunizationCtrl'
+      }
+    }
+  })
+
+  .state('tab.reports', {
+    url: '/reports',
+    views: {
+      'tab-personal': {
+        templateUrl: 'templates/reports.html',
+        controller: 'ReportsCtrl'
+      }
+    }
+  })
+
+  .state('tab.medical-history', {
+    url: '/medical-history',
+    views: {
+      'tab-personal': {
+        templateUrl: 'templates/medical-history.html',
+        controller: 'MedicalHistoryCtrl'
+      }
+    }
+  })
+
   .state('tab.chats', {
       url: '/chats',
       views: {
