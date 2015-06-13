@@ -7674,3 +7674,15 @@ a.button {
   opacity: 0;
   -webkit-transition-duration: 0s;
   transition-duration: 0s; }
+
+.dashboard {
+  background: #2c3e50; }
+  .dashboard .card {
+    margin: 0; }
+  .dashboard .col {
+    padding: 10px; }
+  .dashboard .item {
+    text-align: center;
+    cursor: pointer; }
+    .dashboard .item i {
+      font-size: 40px; }
