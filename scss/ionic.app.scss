@@ -22,7 +22,11 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 @import "www/lib/ionic/scss/ionic";
 @import "www/lib/flaticon/scss/flaticon";
 @import "dashboard";
+@import "basic";
 
+.card {
+	border-radius: 3px;
+}
 
 
 

@@ -1,32 +1,38 @@
-$background-color: #2c3e50;
-
-.dashboard {
+.basic {
 	background: -webkit-linear-gradient(45deg, #DE6262 10%, #FFB88C 90%); /* Chrome 10+, Saf5.1+ */
 	background:    -moz-linear-gradient(45deg, #DE6262 10%, #FFB88C 90%); /* FF3.6+ */
 	background:     -ms-linear-gradient(45deg, #DE6262 10%, #FFB88C 90%); /* IE10 */
 	background:      -o-linear-gradient(45deg, #DE6262 10%, #FFB88C 90%); /* Opera 11.10+ */
 	background:         linear-gradient(45deg, #DE6262 10%, #FFB88C 90%); /* W3C */
 	      
-	.card {
-		margin: 0;
-	}
-	.profile-image {
-		margin: 20px;
-	}
-	.col {
+	.profile-pic {
 		padding: 10px;
+		width: 100%;
+		display: block;
 	}
-	.item {
+	img {
+		display: block;
+		border-radius: 120px;
+		width: 120px;
+		margin: 0 auto;
+		border: 2px solid white;
+	}
+	.profile-info {
 		text-align: center;
-		cursor: pointer;
-
-		i {
-			display: inline-block;
-			font-size: 30px;
-			height: 40px;
+		display: block;
+		h2 {
+			font-weight: 300;
+			color: #fff;
+			margin-bottom: 5px;
 		}
 		p {
-			font-size: 16px;
+			color: #fff;
+			font-size: 18px;
+			font-weight: 300;
+			display: inline-block;
+			&:first-of-type {
+				margin-right: 20px;
+			}
 		}
-	}	
+	}
 }
