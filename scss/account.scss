@@ -1,9 +1,11 @@
 .account {
-	background: -webkit-linear-gradient(135deg, #134E5E 10%, #71B280 90%); /* Chrome 10+, Saf5.1+ */
-	background:    -moz-linear-gradient(135deg, #134E5E 10%, #71B280 90%); /* FF3.6+ */
-	background:     -ms-linear-gradient(135deg, #134E5E 10%, #71B280 90%); /* IE10 */
-	background:      -o-linear-gradient(135deg, #134E5E 10%, #71B280 90%); /* Opera 11.10+ */
-	background:         linear-gradient(135deg, #134E5E 10%, #71B280 90%); /* W3C */
+
+	background: -webkit-linear-gradient(135deg, #DAD299 10%, #B0DAB9 90%); /* Chrome 10+, Saf5.1+ */
+	background:    -moz-linear-gradient(135deg, #DAD299 10%, #B0DAB9 90%); /* FF3.6+ */
+	background:     -ms-linear-gradient(135deg, #DAD299 10%, #B0DAB9 90%); /* IE10 */
+	background:      -o-linear-gradient(135deg, #DAD299 10%, #B0DAB9 90%); /* Opera 11.10+ */
+	background:         linear-gradient(135deg, #DAD299 10%, #B0DAB9 90%); /* W3C */
+	      
 
 	ion-content {
 		padding-top: 0;
@@ -20,13 +22,17 @@
 		background: rgba(255,255,255,0.5);
 		color: #444;
 
+		&.active {
+			background: rgba(255,255,255,0.8);
+		}
+
 		.item-content {
 			background: none;
 			img {
 				border: 1px solid white;
 			}
 			.icon {
-				color: white;
+				color: #B0DAB9;
 			}
 		}
 	}

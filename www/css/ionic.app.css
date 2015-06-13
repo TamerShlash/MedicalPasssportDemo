@@ -7922,6 +7922,12 @@ a.button {
     background: rgba(108, 214, 228, 0.5); }
     .medication .med-list li .title {
       font-size: 20px; }
+    .medication .med-list li .description i {
+      position: absolute;
+      top: 20px;
+      right: 100px;
+      font-size: 20px;
+      color: #f1c40f; }
     .medication .med-list li .time {
       position: absolute;
       top: 0;
@@ -7930,7 +7936,7 @@ a.button {
       height: 70px;
       background: rgba(108, 214, 228, 0.51);
       text-align: center;
-      padding-top: 24px;
+      padding-top: 15px;
       font-size: 16px; }
     .medication .med-list li:nth-child(2n) {
       background: rgba(36, 198, 219, 0.62); }
@@ -8030,15 +8036,15 @@ a.button {
       display: none; }
 
 .immunization {
-  background: -webkit-linear-gradient(135deg, #F1F2B5 10%, #135058 90%);
+  background: -webkit-linear-gradient(45deg, #4CB8C4 10%, #3CD3AD 90%);
   /* Chrome 10+, Saf5.1+ */
-  background: -moz-linear-gradient(135deg, #F1F2B5 10%, #135058 90%);
+  background: -moz-linear-gradient(45deg, #4CB8C4 10%, #3CD3AD 90%);
   /* FF3.6+ */
-  background: -ms-linear-gradient(135deg, #F1F2B5 10%, #135058 90%);
+  background: -ms-linear-gradient(45deg, #4CB8C4 10%, #3CD3AD 90%);
   /* IE10 */
-  background: -o-linear-gradient(135deg, #F1F2B5 10%, #135058 90%);
+  background: -o-linear-gradient(45deg, #4CB8C4 10%, #3CD3AD 90%);
   /* Opera 11.10+ */
-  background: linear-gradient(135deg, #F1F2B5 10%, #135058 90%);
+  background: linear-gradient(45deg, #4CB8C4 10%, #3CD3AD 90%);
   /* W3C */ }
   .immunization .immune-list li {
     position: relative;
@@ -8066,7 +8072,7 @@ a.button {
     padding: 0 20px;
     text-align: left;
     font-size: 20px;
-    color: #444;
+    color: white;
     margin-bottom: 10px;
     margin-top: 20px; }
   .immunization .new {
@@ -8085,7 +8091,7 @@ a.button {
       transition: transform 0.3s; }
       .immunization .new .new-button i {
         font-size: 30px;
-        color: #326765; }
+        color: #37AC7D; }
 
 .reports {
   background: -webkit-linear-gradient(-45deg, #283048 10%, #859398 90%);
@@ -8100,15 +8106,15 @@ a.button {
   /* W3C */ }
 
 .account {
-  background: -webkit-linear-gradient(135deg, #134E5E 10%, #71B280 90%);
+  background: -webkit-linear-gradient(135deg, #DAD299 10%, #B0DAB9 90%);
   /* Chrome 10+, Saf5.1+ */
-  background: -moz-linear-gradient(135deg, #134E5E 10%, #71B280 90%);
+  background: -moz-linear-gradient(135deg, #DAD299 10%, #B0DAB9 90%);
   /* FF3.6+ */
-  background: -ms-linear-gradient(135deg, #134E5E 10%, #71B280 90%);
+  background: -ms-linear-gradient(135deg, #DAD299 10%, #B0DAB9 90%);
   /* IE10 */
-  background: -o-linear-gradient(135deg, #134E5E 10%, #71B280 90%);
+  background: -o-linear-gradient(135deg, #DAD299 10%, #B0DAB9 90%);
   /* Opera 11.10+ */
-  background: linear-gradient(135deg, #134E5E 10%, #71B280 90%);
+  background: linear-gradient(135deg, #DAD299 10%, #B0DAB9 90%);
   /* W3C */ }
   .account ion-content {
     padding-top: 0; }
@@ -8120,12 +8126,79 @@ a.button {
     margin-bottom: 1px;
     background: rgba(255, 255, 255, 0.5);
     color: #444; }
+    .account .item-avatar.active {
+      background: rgba(255, 255, 255, 0.8); }
     .account .item-avatar .item-content {
       background: none; }
       .account .item-avatar .item-content img {
         border: 1px solid white; }
       .account .item-avatar .item-content .icon {
-        color: white; }
+        color: #B0DAB9; }
+
+.medical-history {
+  background: -webkit-linear-gradient(135deg, #ED4264 10%, #FFEDBC 90%);
+  /* Chrome 10+, Saf5.1+ */
+  background: -moz-linear-gradient(135deg, #ED4264 10%, #FFEDBC 90%);
+  /* FF3.6+ */
+  background: -ms-linear-gradient(135deg, #ED4264 10%, #FFEDBC 90%);
+  /* IE10 */
+  background: -o-linear-gradient(135deg, #ED4264 10%, #FFEDBC 90%);
+  /* Opera 11.10+ */
+  background: linear-gradient(135deg, #ED4264 10%, #FFEDBC 90%);
+  /* W3C */ }
+  .medical-history .history .date, .medical-history .history .condition {
+    color: white;
+    display: inline-block;
+    font-size: 16px; }
+  .medical-history .history li:last-of-type .condition {
+    padding-bottom: 50px; }
+  .medical-history .history .condition {
+    border-left: 2px solid white;
+    padding: 20px 20px 25px;
+    position: relative;
+    font-size: 18px; }
+    .medical-history .history .condition:before {
+      content: '';
+      display: block;
+      position: absolute;
+      left: -8px;
+      transform: translateY(50%);
+      margin-top: -3px;
+      width: 14px;
+      height: 14px;
+      background: white;
+      border-radius: 100%; }
+    .medical-history .history .condition:after {
+      content: '';
+      display: block;
+      position: absolute;
+      left: -4px;
+      transform: translateY(50%);
+      margin-top: -15px;
+      width: 6px;
+      height: 6px;
+      background: #ED546F;
+      border-radius: 100%; }
+  .medical-history .history .date {
+    padding: 20px;
+    padding-left: 50px;
+    width: 150px; }
+  .medical-history .history .new {
+    color: white;
+    cursor: pointer;
+    margin-left: 130px; }
+    .medical-history .history .new .new-button {
+      border-radius: 100%;
+      width: 50px;
+      height: 50px;
+      border: 0;
+      background: white; }
+      .medical-history .history .new .new-button i {
+        font-size: 30px;
+        color: #FAB6A0; }
+    .medical-history .history .new p {
+      margin-left: -20px;
+      margin-top: 10px; }
 
 .card {
   border-radius: 3px;
