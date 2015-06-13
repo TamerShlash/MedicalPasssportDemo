@@ -7917,7 +7917,7 @@ a.button {
     z-index: 1; }
     .medication .add-form h2 {
       text-align: center;
-      color: #333;
+      color: #3694C3;
       font-size: 20px;
       font-weight: 300;
       margin: 0; }
@@ -7926,13 +7926,36 @@ a.button {
       .medication .add-form h2 + h2 {
         margin-bottom: 20px; }
     .medication .add-form label {
-      color: #444; }
+      color: #444;
+      position: relative; }
+      .medication .add-form label .result {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 34px;
+        padding: 5px 10px;
+        background: none;
+        line-height: 1.5;
+        font-size: 20px;
+        color: #444;
+        border-bottom: 2px solid #3694C3; }
     .medication .add-form input {
       width: 100%;
-      background: #fafafa;
+      background: none;
       padding: 5px 10px;
       margin-top: 5px;
-      color: #444; }
+      font-size: 20px;
+      color: #444;
+      border-bottom: 2px solid #3694C3; }
+    .medication .add-form ul.hide {
+      display: none; }
+    .medication .add-form ul li {
+      background: white;
+      padding: 10px;
+      border-top: 1px solid #eee; }
+      .medication .add-form ul li:hover {
+        background: #fafafa; }
   .medication .new {
     text-align: center;
     margin-top: 20px;
@@ -7951,7 +7974,7 @@ a.button {
         font-size: 30px;
         color: #24C6DC; }
     .medication .new.blow .new-button {
-      transform: scale(30);
+      transform: scale(40);
       opacity: 0.8; }
       .medication .new.blow .new-button i {
         display: none; }
