@@ -7739,13 +7739,15 @@ a.button {
   background: linear-gradient(45deg, #DE6262 10%, #FFB88C 90%);
   /* W3C */ }
   .dashboard .card {
-    margin: 0; }
+    margin: 0;
+    background: rgba(255, 255, 255, 0.5); }
   .dashboard .profile-image {
     margin: 20px; }
   .dashboard .col {
     padding: 10px; }
   .dashboard .item {
     text-align: center;
+    background: none;
     cursor: pointer; }
     .dashboard .item:hover i, .dashboard .item:hover p {
       color: #F45C52; }
@@ -7753,6 +7755,8 @@ a.button {
       color: #4E54A2; }
     .dashboard .item.item-immunization:hover i, .dashboard .item.item-immunization:hover p {
       color: #29BB9C; }
+    .dashboard .item.item-reports:hover i, .dashboard .item.item-reports:hover p {
+      color: #717E87; }
     .dashboard .item i {
       display: inline-block;
       font-size: 30px;
@@ -8036,6 +8040,44 @@ a.button {
   /* Opera 11.10+ */
   background: linear-gradient(-45deg, #DAD299 10%, #B0DAB9 90%);
   /* W3C */ }
+
+.reports {
+  background: -webkit-linear-gradient(-45deg, #283048 10%, #859398 90%);
+  /* Chrome 10+, Saf5.1+ */
+  background: -moz-linear-gradient(-45deg, #283048 10%, #859398 90%);
+  /* FF3.6+ */
+  background: -ms-linear-gradient(-45deg, #283048 10%, #859398 90%);
+  /* IE10 */
+  background: -o-linear-gradient(-45deg, #283048 10%, #859398 90%);
+  /* Opera 11.10+ */
+  background: linear-gradient(-45deg, #283048 10%, #859398 90%);
+  /* W3C */ }
+
+.account {
+  background: -webkit-linear-gradient(135deg, #134E5E 10%, #71B280 90%);
+  /* Chrome 10+, Saf5.1+ */
+  background: -moz-linear-gradient(135deg, #134E5E 10%, #71B280 90%);
+  /* FF3.6+ */
+  background: -ms-linear-gradient(135deg, #134E5E 10%, #71B280 90%);
+  /* IE10 */
+  background: -o-linear-gradient(135deg, #134E5E 10%, #71B280 90%);
+  /* Opera 11.10+ */
+  background: linear-gradient(135deg, #134E5E 10%, #71B280 90%);
+  /* W3C */ }
+  .account ion-content {
+    padding-top: 0; }
+  .account .account-name {
+    margin-top: 10px !important; }
+  .account .item-avatar {
+    border: none;
+    margin: 0;
+    margin-bottom: 1px;
+    background: rgba(255, 255, 255, 0.5);
+    color: #444; }
+    .account .item-avatar .item-content {
+      background: none; }
+      .account .item-avatar .item-content .icon {
+        color: white; }
 
 .card {
   border-radius: 3px;
