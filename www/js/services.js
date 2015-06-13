@@ -10,7 +10,7 @@ angular.module('ionic.utils', []).factory('$localstorage', ['$window', function(
       $window.localStorage[key] = JSON.stringify(value);
     },
     getObject: function(key) {
-      return JSON.parse($window.localStorage[key] || '{}');
+      return JSON.parse($window.localStorage[key] || null);
     }
   }
 }]);
@@ -22,69 +22,40 @@ angular.module('starter.services', [])
 })
 
 .factory('Accounts', function() {
-  // Might use a resource here that returns a JSON array
-
   // Some fake testing data
   var accounts = [{
     id: 0,
     primary: true,
-    name: 'Susan Smith',
-    picture: 'img/susan.png',
-    gender: 'Female',
-    age: 47, // TODO replace this with BirthDate
-    blood: {
-      type: 'AB',
-      subtype: 'Rh Antigen +'
-    },
+    name: 'Susan Smith', picture: 'img/susan.png',
+    gender: 'Female', age: 47, // TODO replace this with BirthDate
+    blood: { type: 'AB', subtype: 'Rh Antigen +' },
     allergies: [
       { name: 'Cefditoren', level: 'low'    },
       { name: 'Penicillin', level: 'high'   },
       { name: 'Shellfish',  level: 'medium' }
     ],
-    weight: 57,
-    height: 165,
-    bmi: {
-      value: 20.93,
-      level: 'normal'
-    }
+    weight: 57, height: 165,
+    bmi: { value: 20.93, level: 'normal' }
   }, {
     id: 1,
-    name: 'Jane Smith',
-    picture: 'img/jane.png',
-    gender: 'Female',
-    age: 12, // TODO replace this with BirthDate
-    blood: {
-      type: 'A',
-      subtype: 'Rh Antigen +'
-    },
+    name: 'Jane Smith', picture: 'img/jane.png',
+    gender: 'Female', age: 12,
+    blood: { type: 'A', subtype: 'Rh Antigen +' },
     allergies: [
       { name: 'Shrimp', level: 'medium' }
     ],
-    weight: 45,
-    height: 145,
-    bmi: {
-      value: 21.40,
-      level: 'normal'
-    }
+    weight: 45, height: 145,
+    bmi: { value: 21.40, level: 'normal' }
   }, {
     id: 2,
-    name: 'Luca Smith',
-    picture: 'img/luca.png',
-    gender: 'Male',
-    age: 6, // TODO replace this with BirthDate
-    blood: {
-      type: 'B',
-      subtype: 'Rh Antigen +'
-    },
+    name: 'Luca Smith', picture: 'img/luca.png',
+    gender: 'Male', age: 6,
+    blood: { type: 'B', subtype: 'Rh Antigen +' },
     allergies: [
       { name: 'Cow Milk', level: 'low' }
     ],
-    weight: 25,
-    height: 110,
-    bmi: {
-      value: 20.66,
-      level: 'normal'
-    }
+    weight: 25, height: 110,
+    bmi: { value: 20.66, level: 'normal' }
   }];
 
   return {
@@ -95,7 +66,52 @@ angular.module('starter.services', [])
       accounts.splice(accounts.indexOf(account), 1);
     },
     get: function(accountId) {
-      return accounts.filter(function(x) { return x.id == accountId })[0];
+      return accounts.filter(function(i) { return i.id == accountId })[0];
+    }
+  };
+})
+.factory('Drugs', function() {
+  // Some fake testing data
+  var drugs = [
+    { name: 'Acebutolol',       photo: 'drug.png', company: '' },
+    { name: 'Acnocin',          photo: '', company: '' },
+    { name: 'Adrenaline',       photo: '', company: '' },
+    { name: 'Baclofen',         photo: '', company: '' },
+    { name: 'Buscopan',         photo: '', company: '' },
+    { name: 'Calcitriol',       photo: '', company: '' },
+    { name: 'Calcium Acetate',  photo: '', company: '' },
+    { name: 'Epivir',           photo: '', company: '' },
+    { name: 'Gabapentin',       photo: '', company: '' },
+    { name: 'Glipizide',        photo: '', company: '' },
+    { name: 'Imodium',          photo: '', company: '' },
+    { name: 'Lamivudine',       photo: '', company: '' },
+    { name: 'Lactase Fast Act', photo: '', company: '' },
+    { name: 'Lasix',            photo: '', company: '' },
+    { name: 'Lipitor',          photo: '', company: '' },
+    { name: 'Madopar',          photo: '', company: '' },
+    { name: 'Meiact',           photo: '', company: '' },
+    { name: 'Metformin',        photo: '', company: '' },
+    { name: 'Nexium',           photo: '', company: '' },
+    { name: 'Penicillin',       photo: '', company: '' },
+    { name: 'Rapifen',          photo: '', company: '' },
+    { name: 'Singulair',        photo: '', company: '' },
+    { name: 'Tamiflu',          photo: '', company: '' },
+    { name: 'Warfarin',         photo: '', company: '' },
+    { name: 'Xyzal',            photo: '', company: '' },
+    { name: 'Zyloric',          photo: '', company: '' }
+  ];
+  return {
+    all: function() {
+      return drugs;
+    },
+    names: function() {
+      return drugs.map(function(med) { return med.name; });
+    },
+    remove: function(drug) {
+      drugs.splice(drugs.indexOf(drug), 1);
+    },
+    get: function(drugName) {
+      return drugs.filter(function(i) { return i.name == drugName })[0];
     }
   };
 })
