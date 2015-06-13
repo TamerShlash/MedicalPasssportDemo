@@ -7675,6 +7675,58 @@ a.button {
   -webkit-transition-duration: 0s;
   transition-duration: 0s; }
 
+@font-face {
+  font-family: "Flaticon";
+  src: url("/lib/flaticon/fonts/flaticon.eot");
+  src: url("/lib/flaticon/fonts/flaticon.eot#iefix") format("embedded-opentype"), url("/lib/flaticon/fonts/flaticon.woff") format("woff"), url("/lib/flaticon/fonts/flaticon.ttf") format("truetype"), url("/lib/flaticon/fonts/flaticon.svg") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+[class^="flaticon-"]:before, [class*=" flaticon-"]:before, [class^="flaticon-"]:after, [class*=" flaticon-"]:after {
+  font-family: Flaticon;
+  font-size: 30px;
+  font-style: normal; }
+
+.flaticon-add198:before {
+  content: "\e000";
+  position: relative;
+  top: 5px; }
+
+.flaticon-clinic2:before {
+  content: "\e001";
+  position: relative;
+  top: 5px; }
+
+.flaticon-healthclinic2:before {
+  content: "\e002";
+  position: relative;
+  top: 5px; }
+
+.flaticon-injection5:before {
+  content: "\e003";
+  position: relative;
+  top: 5px; }
+
+.flaticon-man412:before {
+  content: "\e004";
+  position: relative;
+  top: 5px; }
+
+.flaticon-medical99:before {
+  content: "\e005";
+  position: relative;
+  top: 5px; }
+
+.flaticon-pill:before {
+  content: "\e006";
+  position: relative;
+  top: 5px; }
+
+.flaticon-skeleton:before {
+  content: "\e007";
+  position: relative;
+  top: 5px; }
+
 .dashboard {
   background: #2c3e50; }
   .dashboard .card {
@@ -7685,4 +7737,6 @@ a.button {
     text-align: center;
     cursor: pointer; }
     .dashboard .item i {
-      font-size: 40px; }
+      display: inline-block;
+      font-size: 30px;
+      height: 40px; }
