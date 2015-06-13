@@ -48,6 +48,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
     }
   })
 
+  .state('tab.basic', {
+    url: '/basic',
+    views: {
+      'tab-personal': {
+        templateUrl: 'templates/basic.html',
+        controller: 'BasicCtrl'
+      }
+    }
+  })
+
   .state('tab.chats', {
       url: '/chats',
       views: {
