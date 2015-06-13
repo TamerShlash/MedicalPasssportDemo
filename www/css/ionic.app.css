@@ -7740,7 +7740,7 @@ a.button {
   /* W3C */ }
   .dashboard .card {
     margin: 0;
-    background: rgba(255, 255, 255, 0.5); }
+    background: rgba(255, 255, 255, 0.6); }
   .dashboard .profile-image {
     margin: 20px; }
   .dashboard .col {
@@ -8076,6 +8076,8 @@ a.button {
     color: #444; }
     .account .item-avatar .item-content {
       background: none; }
+      .account .item-avatar .item-content img {
+        border: 1px solid white; }
       .account .item-avatar .item-content .icon {
         color: white; }
 
