@@ -1,10 +1,12 @@
+$ionicons-font-path: "../fonts" !default;
+
 @font-face {
 	font-family: "Flaticon";
-	src: url("/lib/flaticon/fonts/flaticon.eot");
-	src: url("/lib/flaticon/fonts/flaticon.eot#iefix") format("embedded-opentype"),
-	url("/lib/flaticon/fonts/flaticon.woff") format("woff"),
-	url("/lib/flaticon/fonts/flaticon.ttf") format("truetype"),
-	url("/lib/flaticon/fonts/flaticon.svg") format("svg");
+	src: url("#{$ionicons-font-path}/fonts/flaticon.eot");
+	src: url("#{$ionicons-font-path}/fonts/flaticon.eot#iefix") format("embedded-opentype"),
+	url("#{$ionicons-font-path}/fonts/flaticon.woff") format("woff"),
+	url("#{$ionicons-font-path}/fonts/flaticon.ttf") format("truetype"),
+	url("#{$ionicons-font-path}/fonts/flaticon.svg") format("svg");
 	font-weight: normal;
 	font-style: normal;
 }
