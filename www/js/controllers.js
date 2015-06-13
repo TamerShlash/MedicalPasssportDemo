@@ -1,13 +1,26 @@
 angular.module('starter.controllers', [])
-
-.controller('DashboardCtrl', function($scope) {})
-.controller('BasicCtrl', function($scope) {
-
+.config(function($compileProvider){
+  $compileProvider.imgSrcSanitizationWhitelist(/^\s*(https?|ftp|mailto|file|tel):/);
 })
 
+.controller('DashboardCtrl', function($scope) {})
+.controller('BasicCtrl', function($scope) {})
 .controller('MedicationCtrl', function($scope) {})
 .controller('ImmunizationCtrl', function($scope) {})
-.controller('ReportsCtrl', function($scope) {})
+.controller('ReportsCtrl', function($scope, Camera) {
+  $scope.getPhoto = function() {
+    Camera.getPicture().then(function(imageURI) {
+      $scope.takenPhotoUri = imageURI;
+    }, function(err) {
+    });
+  };
+  $scope.selectPhoto = function() {
+    Camera.selectPicture().then(function(imageURI) {
+      $scope.takenPhotoUri = imageURI;
+    }, function(err) {
+    });
+  };
+})
 .controller('MedicalHistoryCtrl', function($scope) {})
 
 .controller('AccountsCtrl', function($scope, Accounts) {

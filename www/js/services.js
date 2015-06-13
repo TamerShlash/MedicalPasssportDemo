@@ -1,5 +1,9 @@
 angular.module('starter.services', [])
 
+.config(function($compileProvider){
+  $compileProvider.imgSrcSanitizationWhitelist(/^\s*(https?|ftp|mailto|file|tel):/);
+})
+
 .factory('Accounts', function() {
   // Might use a resource here that returns a JSON array
 
@@ -47,4 +51,33 @@ angular.module('starter.services', [])
       return null;
     }
   };
-});
+})
+.factory('Camera', ['$q', function($q) {
+  return {
+    getPicture: function(options) {
+      var q = $q.defer();
+      navigator.camera.getPicture(onPictureSuccess, onPictureFailure, options);
+      function onPictureSuccess(result) {
+        // Do any magic you need
+        q.resolve(result);
+      };
+      function onPictureFailure(err) {
+        q.reject(err);
+      }
+      return q.promise;
+    },
+    selectPicture: function(options) {
+      var q = $q.defer();
+      var options = {sourceType: 0}
+      navigator.camera.getPicture(onPictureSuccess, onPictureFailure, options);
+      function onPictureSuccess(result) {
+        // Do any magic you need
+        q.resolve(result);
+      };
+      function onPictureFailure(err) {
+        q.reject(err);
+      }
+      return q.promise;
+    }
+  }
+}]);
