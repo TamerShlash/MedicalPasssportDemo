@@ -24,10 +24,25 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 @import "dashboard";
 @import "basic";
 @import "medication";
+@import "immunization";
 
 .card {
 	border-radius: 3px;
 	box-shadow: none;
+}
+
+.logo {
+	height: 25px;
+	width: auto;
+	margin-top: 10px;
+	margin-right: 10px;
+	display: inline-block;
+}
+
+.header-title {
+	margin-top: -16px;
+	display: inline-block;
+	vertical-align: middle;
 }
 
 .col {

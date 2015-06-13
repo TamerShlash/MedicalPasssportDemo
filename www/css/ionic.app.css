@@ -7747,10 +7747,12 @@ a.button {
   .dashboard .item {
     text-align: center;
     cursor: pointer; }
-    .dashboard .item:hover i {
+    .dashboard .item:hover i, .dashboard .item:hover p {
       color: #F45C52; }
-    .dashboard .item:hover p {
-      color: #F45C52; }
+    .dashboard .item.item-medication:hover i, .dashboard .item.item-medication:hover p {
+      color: #4E54A2; }
+    .dashboard .item.item-immunization:hover i, .dashboard .item.item-immunization:hover p {
+      color: #29BB9C; }
     .dashboard .item i {
       display: inline-block;
       font-size: 30px;
@@ -8023,9 +8025,33 @@ a.button {
     .medication .new.blow p {
       display: none; }
 
+.immunization {
+  background: -webkit-linear-gradient(-45deg, #DAD299 10%, #B0DAB9 90%);
+  /* Chrome 10+, Saf5.1+ */
+  background: -moz-linear-gradient(-45deg, #DAD299 10%, #B0DAB9 90%);
+  /* FF3.6+ */
+  background: -ms-linear-gradient(-45deg, #DAD299 10%, #B0DAB9 90%);
+  /* IE10 */
+  background: -o-linear-gradient(-45deg, #DAD299 10%, #B0DAB9 90%);
+  /* Opera 11.10+ */
+  background: linear-gradient(-45deg, #DAD299 10%, #B0DAB9 90%);
+  /* W3C */ }
+
 .card {
   border-radius: 3px;
   box-shadow: none; }
+
+.logo {
+  height: 25px;
+  width: auto;
+  margin-top: 10px;
+  margin-right: 10px;
+  display: inline-block; }
+
+.header-title {
+  margin-top: -16px;
+  display: inline-block;
+  vertical-align: middle; }
 
 .col {
   padding: 0; }
