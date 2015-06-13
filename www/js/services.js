@@ -1,3 +1,20 @@
+angular.module('ionic.utils', []).factory('$localstorage', ['$window', function($window) {
+  return {
+    set: function(key, value) {
+      $window.localStorage[key] = value;
+    },
+    get: function(key, defaultValue) {
+      return $window.localStorage[key] || defaultValue;
+    },
+    setObject: function(key, value) {
+      $window.localStorage[key] = JSON.stringify(value);
+    },
+    getObject: function(key) {
+      return JSON.parse($window.localStorage[key] || '{}');
+    }
+  }
+}]);
+
 angular.module('starter.services', [])
 
 .config(function($compileProvider){
@@ -10,29 +27,64 @@ angular.module('starter.services', [])
   // Some fake testing data
   var accounts = [{
     id: 0,
-    name: 'Ben Sparrow',
-    lastText: 'You on your way?',
-    face: 'https://pbs.twimg.com/profile_images/514549811765211136/9SgAuHeY.png'
+    primary: true,
+    name: 'Susan Smith',
+    picture: 'img/susan.png',
+    gender: 'Female',
+    age: 47, // TODO replace this with BirthDate
+    blood: {
+      type: 'AB',
+      subtype: 'Rh Antigen +'
+    },
+    allergies: [
+      { name: 'Cefditoren', level: 'low'    },
+      { name: 'Penicillin', level: 'high'   },
+      { name: 'Shellfish',  level: 'medium' }
+    ],
+    weight: 57,
+    height: 165,
+    bmi: {
+      value: 20.93,
+      level: 'normal'
+    }
   }, {
     id: 1,
-    name: 'Max Lynx',
-    lastText: 'Hey, it\'s me',
-    face: 'https://avatars3.githubusercontent.com/u/11214?v=3&s=460'
-  },{
+    name: 'Jane Smith',
+    picture: 'img/jane.png',
+    gender: 'Female',
+    age: 12, // TODO replace this with BirthDate
+    blood: {
+      type: 'A',
+      subtype: 'Rh Antigen +'
+    },
+    allergies: [
+      { name: 'Shrimp', level: 'medium' }
+    ],
+    weight: 45,
+    height: 145,
+    bmi: {
+      value: 21.40,
+      level: 'normal'
+    }
+  }, {
     id: 2,
-    name: 'Adam Bradleyson',
-    lastText: 'I should buy a boat',
-    face: 'https://pbs.twimg.com/profile_images/479090794058379264/84TKj_qa.jpeg'
-  }, {
-    id: 3,
-    name: 'Perry Governor',
-    lastText: 'Look at my mukluks!',
-    face: 'https://pbs.twimg.com/profile_images/598205061232103424/3j5HUXMY.png'
-  }, {
-    id: 4,
-    name: 'Mike Harrington',
-    lastText: 'This is wicked good ice cream.',
-    face: 'https://pbs.twimg.com/profile_images/578237281384841216/R3ae1n61.png'
+    name: 'Luca Smith',
+    picture: 'img/luca.png',
+    gender: 'Male',
+    age: 6, // TODO replace this with BirthDate
+    blood: {
+      type: 'B',
+      subtype: 'Rh Antigen +'
+    },
+    allergies: [
+      { name: 'Cow Milk', level: 'low' }
+    ],
+    weight: 25,
+    height: 110,
+    bmi: {
+      value: 20.66,
+      level: 'normal'
+    }
   }];
 
   return {
@@ -43,12 +95,7 @@ angular.module('starter.services', [])
       accounts.splice(accounts.indexOf(account), 1);
     },
     get: function(accountId) {
-      for (var i = 0; i < accounts.length; i++) {
-        if (accounts[i].id === parseInt(accountId)) {
-          return accounts[i];
-        }
-      }
-      return null;
+      return accounts.filter(function(x) { return x.id == accountId })[0];
     }
   };
 })
