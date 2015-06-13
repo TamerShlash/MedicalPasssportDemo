@@ -42,4 +42,10 @@ ion-tabs.tabs-color-active-positive .tab-item.tab-item-active, ion-tabs.tabs-col
 	color: #F45C52;
 }
 
+.bar {
+	background: white;
+	&.bar-stable {
+		background: white;
+	}
+}
 
