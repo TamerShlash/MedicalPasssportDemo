@@ -1,5 +1,17 @@
 <ion-view view-title="Medications" class="medication">
     <ion-content>
+    	<ul class="med-list">
+    		<li>
+    			<div class="title">LIPITOR</div>
+    			<div class="description">1 Tablet Per Day</div>
+    			<div class="time">2 Hrs</div>
+    		</li>
+    		<li>
+    			<div class="title">DOPEZAMINE</div>
+    			<div class="description">2 Tablet Per Week</div>
+    			<div class="time">1 Day</div>
+    		</li>
+    	</ul>
         <div class="new" ng-click="showAddForm = true" ng-class="{ blow: showAddForm }">
             <div class="new-button"><i class="icon ion-plus-round"></i></div>
             <p>Add New Medication</p>
@@ -9,11 +21,35 @@
             <h2>MEDICATION</h2>
             <label>Medicine Name
                 <input type="text" ng-model="medicineName" ng-hide="medicine">
-                <div class="result" ng-show="medicine">{{ medicine }}</div>
+                <div class="result" ng-class="{ show: medicine }" ng-show="medicine">{{ medicine }}</div>
                 <ul ng-show="medicineName" ng-class="{ hide: medicine }">
                     <li ng-repeat="med in medicineList | filter: medicineName" on-touch="selectMedicine(med)">{{ med }}</li>
                 </ul>
             </label>
+            <div class="row" ng-show="medicine">
+	            <div class="col">
+	            	<label>Dosage
+	            		<input type="number" ng-model="dosage" class="dosage">
+	            	</label>
+	            </div>
+	            <div class="col">
+	            	<label>Frequency
+						<select ng-model="frequency">
+							<option value=""></option>
+							<option value="">Before Meal</option>
+							<option value="">After Meal</option>
+							<option value="">Once Daily</option>
+							<option value="">Twice Daily</option>
+							<option value="">Morning</option>
+							<option value="">Evening</option>
+						</select>
+	            	</label>
+	            </div>
+            </div>
+            <div class="row">
+            	<button class="button">Add</button>
+            	<button class="button" ng-click="showAddForm = false;">Cancel</button>
+            </div>
         </form>
     </ion-content>
 </ion-view>

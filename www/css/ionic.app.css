@@ -7909,6 +7909,25 @@ a.button {
   /* Opera 11.10+ */
   background: linear-gradient(135deg, #24C6DC 30%, #514A9D 90%);
   /* W3C */ }
+  .medication .med-list li {
+    position: relative;
+    color: white;
+    padding: 15px 20px;
+    background: rgba(108, 214, 228, 0.5); }
+    .medication .med-list li .title {
+      font-size: 20px; }
+    .medication .med-list li .time {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 70px;
+      height: 70px;
+      background: rgba(108, 214, 228, 0.51);
+      text-align: center;
+      padding-top: 24px;
+      font-size: 16px; }
+    .medication .med-list li:nth-child(2n) {
+      background: rgba(36, 198, 219, 0.62); }
   .medication .add-form {
     position: absolute;
     top: 0;
@@ -7925,9 +7944,20 @@ a.button {
         font-size: 14px; }
       .medication .add-form h2 + h2 {
         margin-bottom: 20px; }
+    .medication .add-form .col input {
+      width: 80px; }
+    .medication .add-form .col select {
+      padding: 5px 10px;
+      font-size: 20px;
+      -webkit-appearance: none;
+      border: none;
+      background: none;
+      border-bottom: 2px solid #3694C3; }
     .medication .add-form label {
       color: #3694C3;
-      position: relative; }
+      position: relative;
+      display: block;
+      margin-bottom: 20px; }
       .medication .add-form label .result {
         position: absolute;
         top: 0;
@@ -7940,6 +7970,8 @@ a.button {
         font-size: 20px;
         color: #444;
         border-bottom: 2px solid #3694C3; }
+        .medication .add-form label .result.show {
+          position: static; }
     .medication .add-form input {
       width: 100%;
       background: none;
@@ -7948,6 +7980,12 @@ a.button {
       font-size: 20px;
       color: #444;
       border-bottom: 2px solid #3694C3; }
+    .medication .add-form .button {
+      width: 100%;
+      border: none; }
+      .medication .add-form .button:first-child {
+        color: white;
+        background: #3694C3; }
     .medication .add-form ul {
       height: 200px;
       overflow: scroll; }
@@ -7979,7 +8017,7 @@ a.button {
         color: #24C6DC; }
     .medication .new.blow .new-button {
       transform: scale(40);
-      opacity: 0.8; }
+      opacity: 0.95; }
       .medication .new.blow .new-button i {
         display: none; }
     .medication .new.blow p {
