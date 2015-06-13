@@ -7747,6 +7747,10 @@ a.button {
   .dashboard .item {
     text-align: center;
     cursor: pointer; }
+    .dashboard .item:hover i {
+      color: #F45C52; }
+    .dashboard .item:hover p {
+      color: #F45C52; }
     .dashboard .item i {
       display: inline-block;
       font-size: 30px;
@@ -7907,3 +7911,8 @@ a.button {
 
 ion-tabs.tabs-color-active-positive .tab-item.tab-item-active, ion-tabs.tabs-color-active-positive .tab-item.active, ion-tabs.tabs-color-active-positive .tab-item.activated {
   color: #F45C52; }
+
+.bar {
+  background: white; }
+  .bar.bar-stable {
+    background: white; }
