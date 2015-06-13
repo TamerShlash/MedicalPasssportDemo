@@ -1,6 +1,6 @@
 angular.module('starter.controllers', [])
 
-.controller('PersonalCtrl', function($scope) {})
+.controller('DashboardCtrl', function($scope) {})
 .controller('BasicCtrl', function($scope) {
 
 })

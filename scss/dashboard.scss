@@ -1,0 +1,16 @@
+.dashboard {
+	background: #2c3e50;
+	.card {
+		margin: 0;
+	}
+	.col {
+		padding: 10px;
+	}
+	.item {
+		text-align: center;
+		cursor: pointer;
+		i {
+			font-size: 40px;
+		}
+	}	
+}
