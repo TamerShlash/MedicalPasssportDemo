@@ -1,15 +1,10 @@
 <ion-view view-title="Medications" class="medication">
     <ion-content>
     	<ul class="med-list">
-    		<li>
-    			<div class="title">LIPITOR</div>
-    			<div class="description">1 Tablet Per Day</div>
-    			<div class="time">2 Hrs</div>
-    		</li>
-    		<li>
-    			<div class="title">DOPEZAMINE</div>
-    			<div class="description">2 Tablet Per Week</div>
-    			<div class="time">1 Day</div>
+    		<li ng-repeat="drug in medications">
+    			<div class="title">{{drug.name}}</div>
+    			<div class="description">{{drug.dosage}}</div>
+    			<div class="time">{{drug.frequency}}</div>
     		</li>
     	</ul>
         <div class="new" ng-click="showAddForm = true" ng-class="{ blow: showAddForm }">
@@ -36,18 +31,18 @@
 	            	<label>Frequency
 						<select ng-model="frequency">
 							<option value=""></option>
-							<option value="">Before Meal</option>
-							<option value="">After Meal</option>
-							<option value="">Once Daily</option>
-							<option value="">Twice Daily</option>
-							<option value="">Morning</option>
-							<option value="">Evening</option>
+							<option value="Before Meal">Before Meal</option>
+							<option value="After Meal">After Meal</option>
+							<option value="Once Daily">Once Daily</option>
+							<option value="Twice Daily">Twice Daily</option>
+							<option value="Morning">Morning</option>
+							<option value="Evening">Evening</option>
 						</select>
 	            	</label>
 	            </div>
             </div>
             <div class="row">
-            	<button class="button">Add</button>
+            	<button class="button" ng-click="addMedicine(dosage, frequency); showAddForm=false;">Add</button>
             	<button class="button" ng-click="showAddForm = false;">Cancel</button>
             </div>
         </form>
