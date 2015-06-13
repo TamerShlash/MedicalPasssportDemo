@@ -7898,6 +7898,66 @@ a.button {
   .basic .normal {
     color: #1abc9c; }
 
+.medication {
+  background: -webkit-linear-gradient(135deg, #24C6DC 30%, #514A9D 90%);
+  /* Chrome 10+, Saf5.1+ */
+  background: -moz-linear-gradient(135deg, #24C6DC 30%, #514A9D 90%);
+  /* FF3.6+ */
+  background: -ms-linear-gradient(135deg, #24C6DC 30%, #514A9D 90%);
+  /* IE10 */
+  background: -o-linear-gradient(135deg, #24C6DC 30%, #514A9D 90%);
+  /* Opera 11.10+ */
+  background: linear-gradient(135deg, #24C6DC 30%, #514A9D 90%);
+  /* W3C */ }
+  .medication .add-form {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    padding: 20px 70px;
+    z-index: 1; }
+    .medication .add-form h2 {
+      text-align: center;
+      color: #333;
+      font-size: 20px;
+      font-weight: 300;
+      margin: 0; }
+      .medication .add-form h2.top {
+        font-size: 14px; }
+      .medication .add-form h2 + h2 {
+        margin-bottom: 20px; }
+    .medication .add-form label {
+      color: #444; }
+    .medication .add-form input {
+      width: 100%;
+      background: #fafafa;
+      padding: 5px 10px;
+      margin-top: 5px;
+      color: #444; }
+  .medication .new {
+    text-align: center;
+    margin-top: 20px;
+    color: white;
+    cursor: pointer; }
+    .medication .new .new-button {
+      margin: 0 auto;
+      width: 50px;
+      height: 50px;
+      border-radius: 50px;
+      background: white;
+      padding-top: 10px;
+      margin-bottom: 10px;
+      transition: transform 0.3s; }
+      .medication .new .new-button i {
+        font-size: 30px;
+        color: #24C6DC; }
+    .medication .new.blow .new-button {
+      transform: scale(30);
+      opacity: 0.8; }
+      .medication .new.blow .new-button i {
+        display: none; }
+    .medication .new.blow p {
+      display: none; }
+
 .card {
   border-radius: 3px;
   box-shadow: none; }

@@ -1,6 +1,21 @@
-<ion-view view-title="Medication">
-  <ion-content class="padding">
-    <img ng-src="" style="width: 64px; height: 64px">
-    <p>Basic Info</p>
-  </ion-content>
+<ion-view view-title="Medications" class="medication">
+    <ion-content>
+        <div class="new" ng-click="showAddForm = true" ng-class="{ blow: showAddForm }">
+            <div class="new-button"><i class="icon ion-plus-round"></i></div>
+            <p>Add New Medication</p>
+        </div>
+        <form class="add-form" ng-show="showAddForm">
+            <h2 class="top">ADD NEW</h2>
+            <h2>MEDICATION</h2>
+            <label>Medicine Name
+            	selected: {{medicineName.selected}}
+                <ui-select ng-model="medicineName.selected" ng-disabled="disabled" theme="bootstrap">
+                    <ui-select-match placeholder="Enter medicine name...">{{ $select.selected.name }}</ui-select-match>
+                    <ui-select-choices repeat="medicine in medicineList | filter: $select.search">
+                        <div ng-bind-html="medicine.name | highlight: $select.search"></div>
+                    </ui-select-choices>
+                </ui-select>
+            </label>
+        </form>
+    </ion-content>
 </ion-view>
