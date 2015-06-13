@@ -1,12 +1,10 @@
 <ion-view view-title="HealthPassport">
   <ion-content>
     <ion-list>
-      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="account in accounts" type="item-text-wrap" href="#/tab/accounts/{{account.id}}">
-        <img ng-src="{{account.face}}">
+      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="account in accounts" type="item-text-wrap" ng-click="switchTo(account.id)">
+        <img ng-src="{{account.picture}}">
         <h2>{{account.name}}</h2>
-        <p>{{account.lastText}}</p>
         <i class="icon ion-chevron-right icon-accessory"></i>
-
         <ion-option-button class="button-assertive" ng-click="remove(account)">
           Delete
         </ion-option-button>

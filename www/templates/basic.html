@@ -3,12 +3,12 @@
         <div class="row">
             <div class="col">
                 <div class="profile-pic">
-                    <img src="img/profile.png">
+                    <img src="{{user.picture}}">
                 </div><!--
                 --><div class="profile-info">
-                    <h2>Susan Smith</h2>
-                    <p>Female</p>
-                    <p>48 yrs</p>
+                    <h2>{{user.name}}</h2>
+                    <p>{{user.gender}}</p>
+                    <p>{{user.age}} yrs</p>
                 </div>
             </div>
         </div>
@@ -17,28 +17,28 @@
                 <div class="card blood-type">
                     <div class="item">
                         <div class="title">BLOOD TYPE</div>
-                        <p>AB</p>
+                        <p>{{user.blood.type}}</p>
                     </div>
                     <div class="item item-divider">
-                        Rh Antigen +
+                        {{user.blood.subtype}}
                     </div>
                 </div>
             </div>
             <div class="col">
-                <div class="card allergies">
+            <div class="card allergies">
 			<div class="item item-divider">
 			    ALLERGIES
 			<button class="add"></button>
 			<i class="icon ion-plus-round"></i>
 			</div>
-                    <div class="item">
-                        <ul>
-				<li>Cefditoren <span class="low"></span></li>
-				<li>Shellfish <span class="medium"></span></li>
-				<li>Penicillin <span class="high"></span></li>
-                        </ul>
-                    </div>
-                </div>
+            <div class="item">
+                <ul>
+        			<li ng-repeat="allergy in user.allergies">{{allergy.name}}
+                        <span class="{{allergy.level}}"></span>
+                    </li>
+                </ul>
+            </div>
+            </div>
             </div>
         </div>
         <div class="row">
@@ -49,18 +49,18 @@
 					<i class="icon ion-plus-round"></i>
 					<div class="col">
 						<div class="title">WEIGHT</div>
-						<div class="info">57</div>
+						<div class="info">{{user.weight}}</div>
 						<div class="unit">(kg)</div>
 					</div>
 					<div class="col">
 							<div class="title">HEIGHT</div>
-							<div class="info">1.65</div>
+							<div class="info">{{user.height}}</div>
 							<div class="unit">(m)</div>
 					</div>
 					<div class="col">
 						<div class="title">BMI</div>
-						<div class="info normal">20.93</div>
-						<div class="unit normal">(Normal)</div>
+						<div class="info {{bmi.level}}">{{user.bmi.value}}</div>
+						<div class="unit {{bmi.level}}">({{user.bmi.level | uppercase}})</div>
 					</div>
 				</div>
 			</div>
