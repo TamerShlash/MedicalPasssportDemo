@@ -40,11 +40,11 @@ angular.module('starter.services', [])
     reports: [],
     immunizations: [],
     history: [
-      { name: 'Appendicitis',         date: '1/2013'  },
-      { name: 'Hypertension',         date: '11/2008' },
-      { name: 'Influenza',            date: '5/2004'  },
-      { name: 'hyperlipidemia',       date: '3/2000'  },
-      { name: 'Wisdom Tooth Removal', date: '2/1998'  }
+      { name: 'Appendicitis',         date: 'Jan 2013'  },
+      { name: 'Hypertension',         date: 'Nov 2008' },
+      { name: 'Influenza',            date: 'May 2004'  },
+      { name: 'hyperlipidemia',       date: 'Mar 2000'  },
+      { name: 'Wisdom Tooth Removal', date: 'Feb 1998'  }
     ]
   }, {
     id: 1,

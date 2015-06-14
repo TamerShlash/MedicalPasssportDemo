@@ -64,10 +64,11 @@ angular.module('starter.controllers', [])
 .controller('MedicalHistoryCtrl', function($scope, $localstorage) {
   $scope.auid = $localstorage.get('activeId');
   $scope.user = $localstorage.getObject('account_' + $scope.auid);
+  months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
   $scope.addCase = function(name, date) {
     $scope.user.history.push({
       name: name,
-      date: date.getMonth() + '/' + date.getFullYear()
+      date: months[date.getMonth()] + '/' + date.getFullYear()
     })
   }
 })
