@@ -61,12 +61,13 @@ angular.module('starter.controllers', [])
     $scope.user.reports.push({
       title: title,
       date: months[date.getMonth()] + ' ' + date.getDate() + ', ' + date.getFullYear(),
-      image: reportImage
+      image: $scope.reportImage
     });
     $scope.showForm = false;
   };
 })
 .controller('MedicalHistoryCtrl', function($scope, $localstorage) {
+
   $scope.auid = $localstorage.get('activeId');
   $scope.user = $localstorage.getObject('account_' + $scope.auid);
   months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
@@ -78,6 +79,7 @@ angular.module('starter.controllers', [])
   }
 })
 .controller('AccountsCtrl', function($scope, $localstorage) {
+  $scope.auid = 0;
   $scope.accounts = $localstorage.getObject('accountList');
   $scope.switchTo = function(accountId) {
     $scope.auid = accountId;

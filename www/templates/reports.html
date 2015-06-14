@@ -10,35 +10,33 @@
 		</div>
 		<div class="col">
 			<div class="item">
-				<i class="icon flaticon-clinic2"></i>
-				<p>Urine Test</p>
-				<p>Oct 10, 2013</p>
-			</div>
-		</div>
-		<div class="col">
-			<div class="item">
 				<i class="icon flaticon-skeleton"></i>
 				<p>Chest</p>
 				<p>Mar 12, 2010</p>
 			</div>
 		</div>
+    <div class="col" ng-repeat="report in user.reports">
+      <div class="item">
+        <i class="icon flaticon-clinic2"></i>
+        <p>{{report.title}}</p>
+        <p>{{report.date}}</p>
+      </div>
+    </div>
 	</div>
-	<div class="row" ng-hide="showForm">
-		<div class="col">
-			<div class="new">
-    			<div ng-click="getPhoto()" class="new-button"><i class="icon ion-plus-round"></i></div>
-        	<p>Add New Report</p>
-			</div>
-		</div>
-	</div>
+  </div>
+  <div class="row" ng-hide="showForm">
+    <div class="col">
+      <div class="new">
+          <div ng-click="getPhoto()" class="new-button"><i class="icon ion-plus-round"></i></div>
+          <p>Add New Report</p>
+      </div>
+    </div>
+  </div>
 	<form class="report-form" ng-show="showForm">
 		<input type="text" ng-model="title">
 		<input type="date" ng-model="date">
-		<img ng-src="{{ reportImage }}" alt="">
+		<img ng-src="{{ reportImage }}" alt="" style="max-width: 100%">
 		<button class="button" ng-click="addReport(title, date)">Submit</button>
 	</form>
-    <li ng-repeat="report in user.reports">
-      <img ng-src="{{report.image}}" style="max-width: 100%">
-    </li>
   </ion-content>
 </ion-view>
