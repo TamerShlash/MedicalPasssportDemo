@@ -1,6 +1,8 @@
 <ion-view view-title="Reports" class="reports">
   <ion-content class="padding">
     <button ng-click="getPhoto()" class="button button-block button-primary">Take Photo</button>
-    <img ng-src="{{takenPhotoUri}}" style="max-width: 100%">
+    <li ng-repeat="report in reports">
+      <img ng-src="{{report}}" style="max-width: 100%">
+    </li>
   </ion-content>
 </ion-view>

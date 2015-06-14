@@ -37,23 +37,21 @@ angular.module('starter.controllers', [])
   };
 })
 
-.controller('ImmunizationCtrl', function($scope) {})
-.controller('ReportsCtrl', function($scope, Camera) {
+.controller('ImmunizationCtrl', function($scope, $cordovaDatePicker, $localstorage) {
+  
+})
+.controller('ReportsCtrl', function($scope, Camera, $localstorage) {
+  $scope.activeReports = 'reports_' + $localstorage.get('activeId');
+  $scope.reports = $localstorage.getObject($scope.activeReports) || [];
   $scope.getPhoto = function() {
     Camera.getPicture().then(function(imageURI) {
-      $scope.takenPhotoUri = imageURI;
-    }, function(err) {
-    });
-  };
-  $scope.selectPhoto = function() {
-    Camera.selectPicture().then(function(imageURI) {
-      $scope.takenPhotoUri = imageURI;
+      $scope.reports.push(imageURI);
+      $localstorage.setObject($scope.activeReports, $scope.reports);
     }, function(err) {
     });
   };
 })
 .controller('MedicalHistoryCtrl', function($scope) {})
-
 .controller('AccountsCtrl', function($scope, Accounts, $localstorage, $state) {
   $scope.currentUser = 0;
 
@@ -68,7 +66,6 @@ angular.module('starter.controllers', [])
     Accounts.remove(account);
   }
 })
-
 .controller('AdviceCtrl', function($scope) {
   $scope.settings = {
     enableFriends: true

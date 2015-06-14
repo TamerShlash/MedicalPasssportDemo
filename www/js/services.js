@@ -116,30 +116,19 @@ angular.module('starter.services', [])
   };
 })
 .factory('Camera', ['$q', function($q) {
+
   return {
     getPicture: function(options) {
       var q = $q.defer();
-      navigator.camera.getPicture(onPictureSuccess, onPictureFailure, options);
-      function onPictureSuccess(result) {
+      function onSuccess(result) {
+        console.log(result);
         // Do any magic you need
         q.resolve(result);
       };
-      function onPictureFailure(err) {
+      function onFailure(result) {
         q.reject(err);
       }
-      return q.promise;
-    },
-    selectPicture: function(options) {
-      var q = $q.defer();
-      var options = {sourceType: 0}
-      navigator.camera.getPicture(onPictureSuccess, onPictureFailure, options);
-      function onPictureSuccess(result) {
-        // Do any magic you need
-        q.resolve(result);
-      };
-      function onPictureFailure(err) {
-        q.reject(err);
-      }
+      navigator.camera.getPicture(onSuccess, onFailure, options);
       return q.promise;
     }
   }
