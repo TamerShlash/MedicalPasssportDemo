@@ -1,26 +1,10 @@
 <ion-view view-title="Medical History" class="medical-history">
   <ion-content>
   	<ul class="history">
-  		<li>
-  			<div class="date">Jan 2013</div>
-  			<div class="condition">Appendicitis</div>
+  		<li ng-repeat="case in user.history">
+  			<div class="date">{{case.date}}</div>
+  			<div class="condition">{{case.name}}</div>
   		</li>
-  		<li>
-  			<div class="date">Nov 2008</div>
-  			<div class="condition">Hypertension</div>
-  		</li>
-  		<li>
-  			<div class="date">May 2004</div>
-  			<div class="condition">Influenza</div>
-  		</li>
-  		<li>
-  			<div class="date">Mar 2000</div>
-  			<div class="condition">hyperlipidemia</div>
-  		</li>
-      <li>
-        <div class="date">Feb 1998</div>
-        <div class="condition">Wisdom Tooth Removal</div>
-      </li>
   		<div class="new">
   			<button class="new-button"><i class="icon ion-plus-round"></i></button>
         	<p>Add New Story</p>

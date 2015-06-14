@@ -22,8 +22,13 @@ angular.module('starter', ['ionic', 'ionic.utils', 'starter.controllers', 'start
       // org.apache.cordova.statusbar required
       StatusBar.styleLightContent();
     }
+    accounts = [];
+    Accounts.all().forEach(function(account) {
+      $localstorage.setObject('account_' + account.id, account);
+      accounts.push({id: account.id, name: account.name, picture: account.picture});
+    })
+    $localstorage.setObject('accountList', accounts);
     $localstorage.set('activeId', 0);
-    $localstorage.setObject('activeUser', Accounts.get(0));
   });
 })
 

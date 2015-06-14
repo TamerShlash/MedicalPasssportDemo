@@ -35,7 +35,17 @@ angular.module('starter.services', [])
       { name: 'Shellfish',  level: 'medium' }
     ],
     weight: 57, height: 165,
-    bmi: { value: 20.93, level: 'normal' }
+    bmi: { value: 20.93, level: 'normal' },
+    medications: [],
+    reports: [],
+    immunizations: [],
+    history: [
+      { name: 'Appendicitis',         date: '1/2013'  },
+      { name: 'Hypertension',         date: '11/2008' },
+      { name: 'Influenza',            date: '5/2004'  },
+      { name: 'hyperlipidemia',       date: '3/2000'  },
+      { name: 'Wisdom Tooth Removal', date: '2/1998'  }
+    ]
   }, {
     id: 1,
     name: 'Jane Smith', picture: 'img/jane.png',
@@ -45,7 +55,11 @@ angular.module('starter.services', [])
       { name: 'Shrimp', level: 'medium' }
     ],
     weight: 45, height: 145,
-    bmi: { value: 21.40, level: 'normal' }
+    bmi: { value: 21.40, level: 'normal' },
+    medications: [],
+    reports: [],
+    immunizations: [],
+    history: []
   }, {
     id: 2,
     name: 'Luca Smith', picture: 'img/luca.png',
@@ -55,7 +69,11 @@ angular.module('starter.services', [])
       { name: 'Cow Milk', level: 'low' }
     ],
     weight: 25, height: 110,
-    bmi: { value: 20.66, level: 'normal' }
+    bmi: { value: 20.66, level: 'normal' },
+    medications: [],
+    reports: [],
+    immunizations: [],
+    history: []
   }];
 
   return {
@@ -76,6 +94,7 @@ angular.module('starter.services', [])
     { name: 'Acebutolol',       photo: 'drug.png', company: '' },
     { name: 'Acnocin',          photo: '', company: '' },
     { name: 'Adrenaline',       photo: '', company: '' },
+    { name: 'Aspirin',          photo: '', company: '' },
     { name: 'Baclofen',         photo: '', company: '' },
     { name: 'Buscopan',         photo: '', company: '' },
     { name: 'Calcitriol',       photo: '', company: '' },

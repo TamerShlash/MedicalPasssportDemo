@@ -6,9 +6,9 @@
                 <div class="description">3</div>
                 <div class="time">Before Meal</div>
             </li>
-    		<li ng-repeat="drug in medications">
+    		<li ng-repeat="drug in user.medications">
     			<div class="title">{{drug.name}}</div>
-    			<div class="description">{{drug.dosage}}<i class="icon ion-alert-circled"></i></div>
+    			<div class="description">{{drug.dosage}}<i class="icon ion-alert-circled" ng-show="drug.name == 'Aspirin'"></i></div>
     			<div class="time">{{drug.frequency}}</div>
     		</li>
     	</ul>

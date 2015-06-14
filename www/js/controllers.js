@@ -5,19 +5,22 @@ angular.module('starter.controllers', [])
 
 .controller('DashboardCtrl', function($scope) {})
 .controller('BasicCtrl', function($scope, $localstorage) {
-  $scope.user = $localstorage.getObject('activeUser');
+  $scope.auid = $localstorage.get('activeId');
+  $scope.user = $localstorage.getObject('account_' + $scope.auid);
 })
 .controller('MedicationCtrl', function($scope, $localstorage, Drugs, $ionicPopup) {
-  $scope.activeMedics = 'medications_' + $localstorage.get('activeId');
-  $scope.medications = $localstorage.getObject($scope.activeMedics) || [];
+  $scope.auid = $localstorage.get('activeId');
+  $scope.user = $localstorage.getObject('account_' + $scope.auid);
   $scope.showAddForm = false;
   $scope.medicine = '';
   $scope.medicineList = Drugs.names();
   $scope.showAlert = function() {
+    if ($scope.medicine == 'Aspirin') {
      var alertPopup = $ionicPopup.alert({
        title: 'Drug Conflict Detected!',
        template: ' Talk to your doctor before using ' + $scope.medicine + ' together with Baclofen. Combining these medications can increase the risk of an irregular heart rhythm that may be serious. You may need a dose adjustment or special tests to safely use both medications.'
      });
+    }
    };
   $scope.selectMedicine = function(med) {
     $scope.medicine = med;
@@ -26,48 +29,53 @@ angular.module('starter.controllers', [])
     if (dosage.length === 0 || frequency.length === 0) {
       return;
     }
-    $scope.medications.push({
+    $scope.user.medications.push({
       name: $scope.medicine,
       dosage: dosage,
       frequency: frequency
     });
-    $localstorage.setObject($scope.activeMedics, $scope.medications);
+    $localstorage.setObject('account_' + $scope.auid, $scope.user);
     $scope.showAddForm = false;
     $scope.showAlert();
   };
 })
-
 .controller('ImmunizationCtrl', function($scope, $localstorage) {
-  
+  $scope.auid = $localstorage.get('activeId');
+  $scope.user = $localstorage.getObject('account_' + $scope.auid);
 })
 .controller('ReportsCtrl', function($scope, Camera, $localstorage) {
-  $scope.activeReports = 'reports_' + $localstorage.get('activeId');
-  $scope.reports = $localstorage.getObject($scope.activeReports) || [];
+  $scope.auid = $localstorage.get('activeId');
+  $scope.user = $localstorage.getObject('account_' + $scope.auid);
   $scope.getPhoto = function() {
     Camera.getPicture().then(function(imageURI) {
-      $scope.reports.push(imageURI);
-      $localstorage.setObject($scope.activeReports, $scope.reports);
+      $scope.reportImage = imageURI;
+      $localstorage.setObject('account_' + $scope.auid, $scope.user);
     }, function(err) {
     });
   };
+  $scope.addReport = function(title, date) {
+    $scope.user.reports.push({
+      title: title,
+      date: date.getDate() + '/' + date.getMonth() + '/' + date.getFullYear(),
+      image: reportImage
+    });
+  }
 })
-.controller('MedicalHistoryCtrl', function($scope) {})
-.controller('AccountsCtrl', function($scope, Accounts, $localstorage, $state) {
-  $scope.currentUser = 0;
-
+.controller('MedicalHistoryCtrl', function($scope, $localstorage) {
+  $scope.auid = $localstorage.get('activeId');
+  $scope.user = $localstorage.getObject('account_' + $scope.auid);
+  $scope.addCase = function(name, date) {
+    $scope.user.history.push({
+      name: name,
+      date: date.getMonth() + '/' + date.getFullYear()
+    })
+  }
+})
+.controller('AccountsCtrl', function($scope, $localstorage) {
+  $scope.accounts = $localstorage.getObject('accountList');
   $scope.switchTo = function(accountId) {
-    $scope.currentUser = accountId;
+    $scope.auid = accountId;
     $localstorage.set('activeId', accountId);
-    $localstorage.setObject('activeUser', Accounts.get(accountId));
-  }
-  
-  $scope.accounts = Accounts.all();
-  $scope.remove = function(account) {
-    Accounts.remove(account);
   }
 })
-.controller('AdviceCtrl', function($scope) {
-  $scope.settings = {
-    enableFriends: true
-  };
-});
+.controller('AdviceCtrl', function($scope) {});
