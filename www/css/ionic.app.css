@@ -8271,6 +8271,8 @@ a.button {
     background: rgba(255, 255, 255, 0.7);
     border: none;
     margin: 0; }
+  .advice .list {
+    padding-top: 0; }
 
 .real-time {
   background: -webkit-linear-gradient(45deg, #556270 10%, #FF6B6B 90%);
