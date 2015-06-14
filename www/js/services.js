@@ -27,7 +27,7 @@ angular.module('starter.services', [])
     id: 0,
     primary: true,
     name: 'Susan Smith', picture: 'img/susan.png',
-    gender: 'Female', age: 47, // TODO replace this with BirthDate
+    gender: 'Female', age: 35, // TODO replace this with BirthDate
     blood: { type: 'AB', subtype: 'Rh Antigen +' },
     allergies: [
       { name: 'Cefditoren', level: 'low'    },
