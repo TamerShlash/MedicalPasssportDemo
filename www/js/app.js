@@ -122,6 +122,16 @@ angular.module('starter', ['ionic', 'ionic.utils', 'starter.controllers', 'start
         controller: 'AdviceCtrl'
       }
     }
+  })
+
+  .state('tab.real-time', {
+    url: '/real-time',
+    views: {
+      'tab-dashboard': {
+        templateUrl: 'templates/real-time.html',
+        controller: 'AdviceCtrl'
+      }
+    }
   });
 
   // if none of the above states are matched, use this as the fallback

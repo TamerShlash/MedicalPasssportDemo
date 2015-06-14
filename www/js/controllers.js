@@ -37,7 +37,7 @@ angular.module('starter.controllers', [])
   };
 })
 
-.controller('ImmunizationCtrl', function($scope, $cordovaDatePicker, $localstorage) {
+.controller('ImmunizationCtrl', function($scope, $localstorage) {
   
 })
 .controller('ReportsCtrl', function($scope, Camera, $localstorage) {
