@@ -50,6 +50,7 @@ angular.module('starter.controllers', [])
     Camera.getPicture().then(function(imageURI) {
       $scope.reportImage = imageURI;
       $localstorage.setObject('account_' + $scope.auid, $scope.user);
+      $scope.showForm = true;
     }, function(err) {
     });
   };
