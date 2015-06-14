@@ -55,9 +55,11 @@ angular.module('starter.controllers', [])
     });
   };
   $scope.addReport = function(title, date) {
+    months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August',
+      'September', 'October', 'November', 'December'];
     $scope.user.reports.push({
       title: title,
-      date: date.getDate() + '/' + date.getMonth() + '/' + date.getFullYear(),
+      date: months[date.getMonth()] + ' ' + date.getDate() + ', ' + date.getFullYear(),
       image: reportImage
     });
   }
@@ -69,7 +71,7 @@ angular.module('starter.controllers', [])
   $scope.addCase = function(name, date) {
     $scope.user.history.push({
       name: name,
-      date: months[date.getMonth()] + '/' + date.getFullYear()
+      date: months[date.getMonth()-1] + '/' + date.getFullYear()
     })
   }
 })
