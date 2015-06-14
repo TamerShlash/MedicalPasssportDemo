@@ -46,6 +46,7 @@ angular.module('starter.controllers', [])
 .controller('ReportsCtrl', function($scope, Camera, $localstorage) {
   $scope.auid = $localstorage.get('activeId');
   $scope.user = $localstorage.getObject('account_' + $scope.auid);
+  $scope.showForm = false;
   $scope.getPhoto = function() {
     Camera.getPicture().then(function(imageURI) {
       $scope.reportImage = imageURI;
@@ -60,7 +61,8 @@ angular.module('starter.controllers', [])
       date: date.getDate() + '/' + date.getMonth() + '/' + date.getFullYear(),
       image: reportImage
     });
-  }
+    $scope.showForm = false;
+  };
 })
 .controller('MedicalHistoryCtrl', function($scope, $localstorage) {
   $scope.auid = $localstorage.get('activeId');
