@@ -8106,6 +8106,41 @@ a.button {
   /* Opera 11.10+ */
   background: linear-gradient(-45deg, #283048 10%, #859398 90%);
   /* W3C */ }
+  .reports h3 {
+    font-size: 20px;
+    color: white;
+    padding: 20px; }
+  .reports .col {
+    margin: 10px;
+    text-align: center; }
+    .reports .col .item {
+      border-radius: 5px;
+      text-align: center;
+      background: rgba(255, 255, 255, 0.8);
+      cursor: pointer; }
+      .reports .col .item p {
+        margin-top: 10px;
+        margin-bottom: 0; }
+        .reports .col .item p + p {
+          margin-top: 0;
+          font-size: 12px; }
+    .reports .col .new {
+      text-align: center;
+      margin-top: 20px;
+      color: white;
+      cursor: pointer; }
+      .reports .col .new .new-button {
+        margin: 0 auto;
+        width: 50px;
+        height: 50px;
+        border-radius: 50px;
+        background: white;
+        padding-top: 10px;
+        margin-bottom: 10px;
+        transition: transform 0.3s; }
+        .reports .col .new .new-button i {
+          font-size: 30px;
+          color: #525D6C; }
 
 .account {
   background: -webkit-linear-gradient(135deg, #DAD299 10%, #B0DAB9 90%);
@@ -8219,7 +8254,6 @@ a.button {
         font-size: 30px;
         color: #FAB6A0; }
     .medical-history .history .new p {
-      margin-left: -20px;
       margin-top: 10px; }
 
 .advice {

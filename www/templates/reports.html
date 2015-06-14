@@ -1,6 +1,36 @@
 <ion-view view-title="Reports" class="reports">
-  <ion-content class="padding">
-    <button ng-click="getPhoto()" class="button button-block button-primary">Take Photo</button>
+  <ion-content>
+	<div class="row">
+		<div class="col">
+			<div class="item">
+				<i class="icon flaticon-clinic2"></i>
+				<p>Blood Test</p>
+				<p>Jan 24, 2015</p>
+			</div>
+		</div>
+		<div class="col">
+			<div class="item">
+				<i class="icon flaticon-clinic2"></i>
+				<p>Urine Test</p>
+				<p>Oct 10, 2013</p>
+			</div>
+		</div>
+		<div class="col">
+			<div class="item">
+				<i class="icon flaticon-skeleton"></i>
+				<p>Chest</p>
+				<p>Mar 12, 2010</p>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col">
+			<div class="new">
+    			<div ng-click="getPhoto()" class="new-button"><i class="icon ion-plus-round"></i></div>
+            	<p>Add New Report</p>
+			</div>
+		</div>
+	</div>
     <li ng-repeat="report in reports">
       <img ng-src="{{report}}" style="max-width: 100%">
     </li>
