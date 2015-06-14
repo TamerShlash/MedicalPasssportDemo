@@ -33,10 +33,10 @@
     </div>
   </div>
 	<form class="report-form" ng-show="showForm">
-		<input type="text" ng-model="title">
+		<input type="text" ng-model="titles">
 		<input type="date" ng-model="date">
 		<img ng-src="{{ reportImage }}" alt="" style="max-width: 100%">
-		<button class="button" ng-click="addReport(title, date)">Submit</button>
+		<button class="button" ng-click="addReport(titles, date)" style="margin-bottom: 20px">Submit</button>
 	</form>
   </ion-content>
 </ion-view>
